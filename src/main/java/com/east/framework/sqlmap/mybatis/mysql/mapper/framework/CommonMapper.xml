@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fwcmm">
+
+    <sql id="pagingStart_row_query">
+        SELECT R_PAGING_TB.* FROM (
+        SELECT @ROWNUM := @ROWNUM + 1 as rnum, PAGING_TB.* FROM (
+    </sql>
+
+    <sql id="pagingEnd_row_query">
+        ) PAGING_TB, (SELECT @ROWNUM := 0) RUM_TB
+        ) R_PAGING_TB
+        WHERE R_PAGING_TB.rnum between (1 + (#{pageIndex} - 1) * #{pageSize} ) and (#{pageIndex} * #{pageSize})
+    </sql>
+
+    <sql id="pagingStart">
+        SELECT
+            case
+	            when #{mysqlForPageTotalCount} > #{pageSize} then  #{mysqlForPageTotalCount} - ((#{pageIndex}-1) * #{pageSize}) - DATA_RNUM + 1
+	            else #{mysqlForPageTotalCount} - DATA_RNUM + 1
+	        end rnum,
+            R_PAGING_TB.* FROM (
+        SELECT @ROWNUM := @ROWNUM + 1 AS DATA_RNUM, PAGING_TB.* FROM (
+    </sql>
+
+    <sql id="pagingEnd">
+        LIMIT #{mysqlForPageLimitS}, #{pageSize}
+        ) PAGING_TB, (SELECT @ROWNUM := 0) RUM_TB
+        )R_PAGING_TB
+    </sql>
+
+</mapper>
