@@ -226,6 +226,6 @@ public interface CommonMapperDAO {
      * @param queryId - 리스트 조회 처리 SQL mapping 쿼리 ID
      * @param handler - 조회 결과를 제어하기 위해 구현한 ResultHandler
      */
-    public void listToOutUsingResultHandler(String queryId, ResultHandler handler);
+    public void listToOutUsingResultHandler(String queryId, @SuppressWarnings("rawtypes") ResultHandler handler);
 
 }
