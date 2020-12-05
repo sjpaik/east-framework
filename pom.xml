@@ -6,7 +6,7 @@
         <groupId>com.east</groupId>
         <artifactId>east-framework-parent</artifactId>
         <version>2.0.0</version>
-        <relativePath>../east-framework-parent</relativePath>
+        <relativePath />
     </parent>
     <artifactId>east-framework</artifactId>
     <packaging>jar</packaging>
