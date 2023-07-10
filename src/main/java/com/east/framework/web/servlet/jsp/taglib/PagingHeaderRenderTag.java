@@ -93,7 +93,7 @@ public class PagingHeaderRenderTag extends TagSupport {
                 msgId = this.mTemplate;
             }
 
-            vstr = ((MessageSourceAccessor) RequestContextUtils.findWebApplicationContext(req).getBean("messageSourceAccessor")).getMessage(msgId,
+            vstr = ((MessageSourceAccessor) RequestContextUtils.getWebApplicationContext(req).getBean("messageSourceAccessor")).getMessage(msgId,
                     new Object[] { pagingTotalNo, pagingCurrentNo, pagingMaxPageNo }, RequestContextUtils.getLocale(req));
 
             jwt.print(vstr);

@@ -32,7 +32,7 @@ public class PagingRenderTag extends TagSupport {
     private PageInfo item;
     private String template;
     private String funcName;
-    
+
     @Override
     public void release() {
         super.release();
@@ -83,7 +83,7 @@ public class PagingRenderTag extends TagSupport {
             if ("".equals(this.template)) {
                 pr = new DefinedPagingRender();
             } else {
-                pr = ((DefinedPagingRender) RequestContextUtils.findWebApplicationContext(req).getBean(this.template));
+                pr = ((DefinedPagingRender) RequestContextUtils.getWebApplicationContext(req).getBean(this.template));
             }
 
             if (this.item != null) {

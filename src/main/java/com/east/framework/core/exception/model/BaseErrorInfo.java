@@ -2,11 +2,14 @@ package com.east.framework.core.exception.model;
 
 import java.io.Serializable;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * 에러 기본 객체.
  *
  * Updated on : 2015-10-01 Updated by : love.
  */
+@XmlRootElement
 public class BaseErrorInfo implements Serializable {
 
 	private static final long serialVersionUID = 1L;
