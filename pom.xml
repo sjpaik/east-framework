@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>com.east</groupId>
-        <artifactId>east-framework-parent</artifactId>
-        <version>3.0.0</version>
-        <relativePath />
-    </parent>
-    <artifactId>east-framework</artifactId>
-    <packaging>jar</packaging>
-    <name>east Standard Framework</name>
-    <description>east Standard Framework</description>
-    
-    <repositories>
-        <repository>
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.east</groupId>
+		<artifactId>east-framework-parent</artifactId>
+		<version>2.0.0</version>
+		<relativePath>../east-framework-parent</relativePath>
+	</parent>
+	<artifactId>east-framework</artifactId>
+	<packaging>jar</packaging>
+	<name>east Standard Framework</name>
+	<description>east Standard Framework</description>
+
+	<repositories>
+		<repository>
 			<id>high-release</id>
 			<url>https://nexus.highcnc.com/repository/maven-releases/</url>
 			<releases>
@@ -34,7 +34,7 @@
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
-        <repository>
+		<repository>
 			<id>mvn2</id>
 			<url>http://repo1.maven.org/maven2/</url>
 			<releases>
@@ -54,34 +54,17 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-    </repositories>
-    
-    <distributionManagement>
-        <repository>
-            <id>high-releases</id>
-            <url>https://nexus.highcnc.com/repository/maven-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>high-snapshots</id>
-            <url>https://nexus.highcnc.com/repository/maven-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-    
-    <build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-source-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
-    
+	</repositories>
+
+	<distributionManagement>
+		<repository>
+			<id>high-releases</id>
+			<url>https://nexus.highcnc.com/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>high-snapshots</id>
+			<url>https://nexus.highcnc.com/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 </project>
